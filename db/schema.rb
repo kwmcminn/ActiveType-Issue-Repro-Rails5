@@ -10,21 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200119195539) do
+ActiveRecord::Schema.define(version: 2020_01_19_205336) do
+
+  create_table "dog_creators", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "dogs", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.string   "color"
+    t.string "name"
+    t.integer "age"
+    t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "puppies", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.string   "color"
-    t.integer  "dog_id"
+    t.string "name"
+    t.integer "age"
+    t.string "color"
+    t.integer "dog_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dog_id"], name: "index_puppies_on_dog_id"

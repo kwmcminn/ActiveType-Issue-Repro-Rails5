@@ -1,5 +1,3 @@
-require 'pry'
-
 class DogCreator < ActiveType::Object
   before_save :perform
 
@@ -14,6 +12,7 @@ class DogCreator < ActiveType::Object
   end
 
   def create_puppies
+    # did not include a name (which is validated), to make the Puppy creation fail
     Puppy.create(age:7, color:"Black", dog_id: Dog.last)
   end
 end
